@@ -2,17 +2,18 @@ package com.zhy.sample;
 
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.zhy.adapter.recyclerview.CommonAdapter;
 import com.zhy.adapter.recyclerview.base.ViewHolder;
@@ -85,7 +86,8 @@ public class RecyclerViewActivity extends AppCompatActivity
             }
         });
 
-        mRecyclerView.setAdapter(mLoadMoreWrapper);
+//        mRecyclerView.setAdapter(mLoadMoreWrapper);
+        mRecyclerView.setAdapter(mHeaderAndFooterWrapper);
         mAdapter.setOnItemClickListener(new CommonAdapter.OnItemClickListener()
         {
             @Override
@@ -119,6 +121,9 @@ public class RecyclerViewActivity extends AppCompatActivity
         t2.setText("Header 2");
         mHeaderAndFooterWrapper.addHeaderView(t1);
         mHeaderAndFooterWrapper.addHeaderView(t2);
+        TextView t3 = new TextView(this);
+        t3.setText("Footer 1");
+        mHeaderAndFooterWrapper.addFootView(t3);
     }
 
     private void initDatas()
