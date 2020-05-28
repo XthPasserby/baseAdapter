@@ -149,5 +149,20 @@ public class HeaderAndFooterWrapper<T> extends RecyclerView.Adapter<RecyclerView
         return mFootViews.size();
     }
 
+    public void removeHeaderView(View view) {
+        final int indexToRemove = mHeaderViews.indexOfValue(view);
+        if (indexToRemove >= 0) {
+            mHeaderViews.removeAt(indexToRemove);
+        }
+        notifyDataSetChanged();
+    }
+
+    public void removeFooterView(View view) {
+        final int indexToRemove = mFootViews.indexOfValue(view);
+        if (indexToRemove >= 0) {
+            mFootViews.removeAt(indexToRemove);
+        }
+        notifyDataSetChanged();
+    }
 
 }

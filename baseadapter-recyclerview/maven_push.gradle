@@ -14,7 +14,7 @@ uploadArchives {
     repositories {
         mavenDeployer {
 
-            pom.version = '3.0.3.1'
+            pom.version = '3.0.3.5'
             pom.artifactId = 'base-rvadapter'
             pom.groupId = 'com.zhy'
 
